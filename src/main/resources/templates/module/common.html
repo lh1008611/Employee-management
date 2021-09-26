@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--头部导航栏-->
+<header class="topbar" th:fragment="topbar">
+    <nav class="navbar top-navbar navbar-expand-md navbar-light">
+        <!-- ============================================================== -->
+        <!-- Logo -->
+        <!-- ============================================================== -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">
+                <!-- Logo icon --><b>
+                <img th:src="@{/assets/images/logo-icon.png}" alt="homepage" class="dark-logo"/>
+            </b>
+                <!--End Logo icon -->
+                <!-- Logo text -->
+                <span>
+                    <img th:src="@{/assets/images/logo-text.png}" alt="homepage" class="dark-logo"/>
+                </span>
+            </a>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Logo -->
+        <!-- ============================================================== -->
+        <div class="navbar-collapse">
+            <!-- ============================================================== -->
+            <!-- toggle and nav items -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav mr-auto">
+                <!-- This is  -->
+                <li class="nav-item"><a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark"
+                                        href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+            </ul>
+            <!-- ============================================================== -->
+            <!-- User profile and search -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav my-lg-0">
+                <!-- ============================================================== -->
+                <!-- Search -->
+                <!-- ============================================================== -->
+                <li class="nav-item hidden-xs-down search-box"><a
+                        class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i
+                        class="ti-search"></i></a>
+                    <form class="app-search">
+                        <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i
+                            class="ti-close"></i></a>
+                    </form>
+                </li>
+                <!-- ============================================================== -->
+                <!-- Profile -->
+                <!-- ============================================================== -->
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-dark" href="login.html"><img
+                            th:src="@{/assets/images/users/1.jpg}" alt="user" class="profile-pic"/></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!--侧边栏-->
+<aside class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav" th:fragment="sidebar-nav">
+            <ul id="sidebarnav">
+                <li><a class="waves-effect waves-dark" href="index.html" aria-expanded="false"><i
+                        class="mdi mdi-gauge"></i><span class="hide-menu"
+                                                        th:text="#{list.dashboard}">Dashboard</span></a></li>
+                <li><a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i
+                        class="mdi mdi-account-check"></i><span class="hide-menu"
+                                                                th:text="#{list.profile}">Profile</span></a></li>
+                <li><a class="waves-effect waves-dark" th:href="@{/employeeList}" aria-expanded="false"><i
+                        class="mdi mdi-table"></i><span class="hide-menu" th:text="#{list.table}">Table</span></a></li>
+                <li><a class="waves-effect waves-dark" href="icon-material.html" aria-expanded="false"><i
+                        class="mdi mdi-emoticon"></i><span class="hide-menu" th:text="#{list.icons}">Icons</span></a>
+                </li>
+                <li><a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
+                        class="mdi mdi-earth"></i><span class="hide-menu" th:text="#{list.map}">Map</span></a></li>
+                <li><a class="waves-effect waves-dark" href="pages-blank.html" aria-expanded="false"><i
+                        class="mdi mdi-book-open-variant"></i><span class="hide-menu"
+                                                                    th:text="#{list.blank}">Blank</span></a></li>
+                <li><a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
+                        class="mdi mdi-help-circle"></i><span class="hide-menu">404</span></a></li>
+            </ul>
+
+        </nav>
+        <!-- End Sidebar navigation -->
+        <div class="text-center m-t-30">
+            <a th:href="@{/index.html(l='zh_CN')}" class="btn waves-effect waves-light btn-info hidden-md-down">中</a>
+            <a th:href="@{/index.html(l='en_US')}" class="btn waves-effect waves-light btn-info hidden-md-down">英</a>
+        </div>
+    </div>
+    <!-- End Sidebar scroll-->
+</aside>
+
+</html>

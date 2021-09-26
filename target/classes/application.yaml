@@ -1,0 +1,14 @@
+#配置文件到底能写什么？
+#和spring.factories的联系？
+#在配置文件中能配置的东西都存在一个固有的规律xxxproperties  由xxxAutoConfiguration：默认值   xxxProperties 和配置文件绑定，就可以使用自定义配置了
+
+#关闭模板引擎的缓存
+spring:
+  thymeleaf:
+    cache: false
+
+  #国际化
+  messages:
+    basename: i18n.login
+
+
